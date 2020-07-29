@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class LoginPage extends BasePage {
 
     public void acessarTelaInicial(){
-        DriverFactory.getDriver().get("http://srbarriga.herokuapp.com");
+        DriverFactory.getDriver().get("https://seubarriga.wcaquino.me/");
     }
 
     public void setEmail(String email){
@@ -19,6 +19,6 @@ public class LoginPage extends BasePage {
     }
 
     public void entrar() {
-        clicarBotao(By.xpath("//button[.='Entrar']"));
+        clicarBotaoPorTexto("Entrar");
     }
 }
