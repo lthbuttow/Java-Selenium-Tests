@@ -1,8 +1,11 @@
 package tests;
 
 import core.BaseTest;
+import core.Propriedades;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -16,12 +19,13 @@ import java.util.List;
 
 import static utils.DataUtils.*;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
     private MenuPage menuPage = new MenuPage();
     private MovimentacaoPage movPage = new MovimentacaoPage();
 
     @Test
-    public void testInserirMovimentacao(){
+    public void test1InserirMovimentacao(){
         menuPage.acessarTelaInserirMovimentacao();
 
         movPage.setDataMovimentacao(obterDataFormatada(new Date()));
@@ -29,7 +33,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação do Teste");
         movPage.setInteressado("Interessado Qualquer");
         movPage.setValor("500");
-        movPage.setConta("Conta do Teste alterada");
+        movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
         movPage.setStatusPago();
         movPage.salvar();
 
@@ -37,7 +41,7 @@ public class MovimentacaoTest extends BaseTest {
     }
 
     @Test
-    public void testCamposObrigatorios(){
+    public void test2CamposObrigatorios(){
         menuPage.acessarTelaInserirMovimentacao();
 
         movPage.salvar();
@@ -50,7 +54,7 @@ public class MovimentacaoTest extends BaseTest {
     }
 
     @Test
-    public void testInserirMovimentacaoFutura(){
+    public void test3InserirMovimentacaoFutura(){
         menuPage.acessarTelaInserirMovimentacao();
 
         Date dataFutura = obterDataComDiferencaDias(5);
@@ -60,7 +64,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação do Teste");
         movPage.setInteressado("Interessado Qualquer");
         movPage.setValor("500");
-        movPage.setConta("Conta do Teste alterada");
+        movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
         movPage.setStatusPago();
         movPage.salvar();
 
