@@ -1,17 +1,13 @@
 package tests;
 
 import core.BaseTest;
-import core.Propriedades;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MenuPage;
 import pages.MovimentacaoPage;
-import utils.DataUtils;
+
 
 import java.util.Arrays;
 import java.util.Date;
@@ -33,7 +29,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação do Teste");
         movPage.setInteressado("Interessado Qualquer");
         movPage.setValor("500");
-        movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+        movPage.setConta("Conta para movimentacoes");
         movPage.setStatusPago();
         movPage.salvar();
 
@@ -64,7 +60,7 @@ public class MovimentacaoTest extends BaseTest {
         movPage.setDescricao("Movimentação do Teste");
         movPage.setInteressado("Interessado Qualquer");
         movPage.setValor("500");
-        movPage.setConta(Propriedades.NOME_CONTA_ALTERADA);
+        movPage.setConta("Conta para movimentacoes");
         movPage.setStatusPago();
         movPage.salvar();
 
