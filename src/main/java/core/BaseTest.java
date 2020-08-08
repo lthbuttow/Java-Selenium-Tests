@@ -2,10 +2,13 @@ package core;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import pages.LoginPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +20,17 @@ public class BaseTest {
 
 	@Rule
 	public TestName testName = new TestName();
+
+	private static LoginPage page = new LoginPage();
+
+	@Before
+	public void inicializa(){
+		page.acessarTelaInicial();
+
+		page.setEmail("lucas_buttow@outlook.com");
+		page.setSenha("6478");
+		page.entrar();
+	}
 	
 	@After
 	public void finaliza() throws IOException{
