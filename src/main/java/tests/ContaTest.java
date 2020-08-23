@@ -8,7 +8,6 @@ import org.junit.runners.MethodSorters;
 import pages.ContasPage;
 import pages.MenuPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContaTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();

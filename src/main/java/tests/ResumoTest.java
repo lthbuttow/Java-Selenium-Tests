@@ -12,7 +12,6 @@ import org.openqa.selenium.WebElement;
 import pages.MenuPage;
 import pages.ResumoPage;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest {
     private MenuPage menuPage = new MenuPage();
     private ResumoPage resumoPage = new ResumoPage();

@@ -18,4 +18,19 @@ import tests.*;
         ResumoTest.class
 })
 public class SuiteGeral {
+    private static LoginPage page = new LoginPage();
+
+    @BeforeClass
+    public static void reset(){
+        page.acessarTelaInicial();
+
+        page.setEmail("lucas_buttow@outlook.com");
+        page.setSenha("6478");
+        page.entrar();
+
+        page.resetar();
+
+        DriverFactory.killDriver();
+    }
+
 }
